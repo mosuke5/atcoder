@@ -17,7 +17,7 @@ w = W
 result = 0
 A.each do |a|
   w += a
-  result+=1 if w > S && w < T
+  result+=1 if w >= S && w <= T
 end
 
 puts result
