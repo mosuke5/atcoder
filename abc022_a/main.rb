@@ -8,9 +8,9 @@
 ## weight: 初期の体重
 ## change: 体重の変動値 ex) [10,20,-10,5]
 #
-n,min,max=gets.chomp.split(" ").map(&:to_i)
+n, min, max = gets.chomp.split(" ").map(&:to_i)
 weight = gets.to_i
-change  = []
+change = []
 (n-1).times do 
   change.push(gets.to_i)
 end
@@ -20,9 +20,10 @@ end
 #
 tmp_weight = weight
 result = 0
+result += 1 if weight >= min && weight <= max
 change.each do |a|
   tmp_weight += a
-  result+=1 if tmp_weight >= min && tmp_weight <= max
+  result += 1 if tmp_weight >= min && tmp_weight <= max
 end
 
 puts result
